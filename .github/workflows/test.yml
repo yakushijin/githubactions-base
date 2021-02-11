@@ -1,0 +1,25 @@
+name: TEST
+
+on:
+  # トリガーとなるイベントを定義
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+# 実行するジョブを定義
+jobs:
+  # 任意のジョブ名を定義
+  test:
+    # 実行環境を指定
+    runs-on: ubuntu-latest
+
+    # ステップごとの区分け
+    steps:
+      - uses: actions/checkout@v2
+
+      # 任意の実行名、実行コマンドを記載
+      - name: run test
+        run: echo "test"
