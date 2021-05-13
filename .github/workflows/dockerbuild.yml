@@ -22,4 +22,4 @@ jobs:
 
       # 任意の実行名、実行コマンドを記載
       - name: run build
-        run: docker build . --build-arg TEST_KEY=${{ secrets.TEST_KEY }}
+        run: docker build --build-arg TEST_KEY=${{ secrets.TEST_KEY }} .
