@@ -16,9 +16,6 @@ jobs:
     # 実行環境を指定
     runs-on: ubuntu-latest
 
-    env:
-      TEST_KEY: ${{ secrets.TEST_KEY }}
-
     # ステップごとの区分け
     steps:
       - uses: actions/checkout@v2
@@ -28,4 +25,6 @@ jobs:
         run: echo "test"
 
       - name: env test
+        env:
+          TEST_KEY: ${{ secrets.TEST_KEY }}
         run: echo $TEST_KEY
