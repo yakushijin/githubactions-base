@@ -3,9 +3,9 @@ name: TEST
 on:
   # トリガーとなるイベントを定義
   push:
-    branches: [master]
+    branches: [develop]
   pull_request:
-    branches: [master]
+    branches: [develop]
 
   workflow_dispatch:
 
@@ -23,3 +23,6 @@ jobs:
       # 任意の実行名、実行コマンドを記載
       - name: run test
         run: echo "test"
+
+      - name: env test
+        run: echo ${{secrets.TEST_KEY}}

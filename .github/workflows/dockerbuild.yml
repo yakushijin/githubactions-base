@@ -3,9 +3,9 @@ name: CD
 on:
   # トリガーとなるイベントを定義
   push:
-    branches: [master]
+    branches: [develop]
   pull_request:
-    branches: [master]
+    branches: [develop]
 
   workflow_dispatch:
 
