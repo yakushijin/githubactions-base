@@ -28,4 +28,7 @@ jobs:
         run: echo "test"
 
       - name: env test
-        run: echo '$TEST_KEY'
+        run: echo $TEST_KEY
+
+    env:
+      TEST_KEY: ${{ secrets.TEST_KEY }}
