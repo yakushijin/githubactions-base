@@ -25,6 +25,12 @@ jobs:
         run: echo "test"
 
       - name: env test
+        run: echo "TEST_KEY=" > test.txt
+
+      - name: env test2
         env:
-          TEST_KEY: ${{ secrets.TEST_KEY }}
-        run: echo $TEST_KEY
+        run: sed -r -i "s/^TEST_KEY=$/TEST_KEY=${{ secrets.TEST_KEY }}/"  test.txt
+
+      - name: env test3
+        env:
+        run: cat  test.txt
